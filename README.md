@@ -1,15 +1,12 @@
 # Run fairseq-train with SLURM srun/sbatch
 
-Clone this repo
-```bash
-git clone https://github.com/pbelevich/fair_seq_fsdp_slurm.git
-cd fair_seq_fsdp_slurm
-```
 Create conda env
 ```bash
 conda create -yn fairseq_fsdp python=3.8
 conda activate fairseq_fsdp
-
+```
+Install PyTorch
+```bash
 conda install pytorch cudatoolkit=11.1 -c pytorch -c nvidia
 ```
 Clone and install fairscale from source
@@ -17,12 +14,14 @@ Clone and install fairscale from source
 git clone git@github.com:facebookresearch/fairscale.git
 cd fairscale
 pip install -e .
+cd ..
 ```
 Clone and install pbelevich/fairseq from branch `fsdp_1T_2`
 ```bash
 git clone -b fsdp_1T_2 git@github.com:pbelevich/fairseq.git pbelevich-fairseq
 cd pbelevich-fairseq
 pip install -e .
+cd ..
 ```
 Install deepspeed
 ```bash
@@ -35,9 +34,16 @@ cd apex
 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" \
   --global-option="--deprecated_fused_adam" --global-option="--xentropy" \
   --global-option="--fast_multihead_attn" ./
+cd ..
 ```
 [No need if you use fsdp_1T_2@pbelevich/fairseq] Quick fix [fairseq-deepspeed issue](https://github.com/pytorch/fairseq/issues/3810):
 Open fairseq/optim/cpu_adam.py and add `, False` to [the line 116](https://github.com/pytorch/fairseq/blob/1f7ef9ed1e1061f8c7f88f8b94c7186834398690/fairseq/optim/cpu_adam.py#L116)
+
+Clone this repo
+```bash
+git clone https://github.com/pbelevich/fair_seq_fsdp_slurm.git
+cd fair_seq_fsdp_slurm
+```
 
 [Preprocess the data for RoBERTa](https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.pretraining.md#1-preprocess-the-data)
 ```bash
