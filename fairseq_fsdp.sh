@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# export MKL_THREADING_LAYER=GNU
-# export OMP_NUM_THREADS=20
+export ENABLE_NCCL_BASE_COLLECTIVES=1
 
 # LAYERS=96
 # ATTN=96
