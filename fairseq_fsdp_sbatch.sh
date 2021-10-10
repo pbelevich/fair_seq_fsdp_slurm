@@ -8,7 +8,7 @@
 
 #SBATCH --gpus=64
 
-#SBATCH --cpus-per-task=96
+#SBATCH --cpus-per-task=80
 
 #SBATCH --partition=train
 
