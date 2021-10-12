@@ -16,9 +16,9 @@ cd pbelevich-fairscale
 pip install -e .
 cd ..
 ```
-Clone and install pbelevich/fairseq from branch `fsdp_1T_2`
+Clone and install pbelevich/fairseq from branch `fsdp_1T`
 ```bash
-git clone -b fsdp_1T_2 git@github.com:pbelevich/fairseq.git pbelevich-fairseq
+git clone -b fsdp_1T git@github.com:pbelevich/fairseq.git pbelevich-fairseq
 cd pbelevich-fairseq
 pip install -e .
 cd ..
