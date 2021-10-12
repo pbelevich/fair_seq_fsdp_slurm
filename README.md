@@ -7,7 +7,7 @@ conda activate fsdp_1T
 ```
 Install PyTorch
 ```bash
-conda install pytorch cudatoolkit=11.1 -c pytorch -c nvidia
+conda install -y pytorch cudatoolkit=11.1 -c pytorch -c nvidia
 ```
 Clone and install fairscale from source
 ```bash
