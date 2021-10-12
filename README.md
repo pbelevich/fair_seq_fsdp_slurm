@@ -11,8 +11,8 @@ conda install -y pytorch cudatoolkit=11.1 -c pytorch -c nvidia
 ```
 Clone and install fairscale from source
 ```bash
-git clone git@github.com:facebookresearch/fairscale.git
-cd fairscale
+git clone git@github.com:pbelevich/fairscale.git pbelevich-fairscale
+cd pbelevich-fairscale
 pip install -e .
 cd ..
 ```
