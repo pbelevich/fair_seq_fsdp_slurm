@@ -2,8 +2,8 @@
 
 Create conda env
 ```bash
-conda create -yn fairseq_fsdp python=3.8
-conda activate fairseq_fsdp
+conda create -yn fsdp_1T python=3.8
+conda activate fsdp_1T
 ```
 Install PyTorch
 ```bash
@@ -41,8 +41,8 @@ Open fairseq/optim/cpu_adam.py and add `, False` to [the line 116](https://githu
 
 Clone this repo
 ```bash
-git clone https://github.com/pbelevich/fair_seq_fsdp_slurm.git
-cd fair_seq_fsdp_slurm
+git clone https://github.com/pbelevich/fsdp_1T.git
+cd fsdp_1T
 ```
 
 [Preprocess the data for RoBERTa](https://github.com/pytorch/fairseq/blob/master/examples/roberta/README.pretraining.md#1-preprocess-the-data)
