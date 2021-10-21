@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=fairseq-fsdp
+#SBATCH --job-name=fsdp_1T
 
 #SBATCH --open-mode=append
 
