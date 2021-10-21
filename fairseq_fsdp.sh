@@ -7,6 +7,8 @@ export ENABLE_NCCL_BASE_COLLECTIVES=0
 # ATTN=96
 # EMBED_DIM=20928
 
+ulimit -S -c unlimited
+
 fairseq-train data-bin/wikitext-103 \
         --ddp-backend fully_sharded --fp16 --fp16-init-scale 4 \
         --cpu-offload --checkpoint-activations \
