@@ -36,7 +36,7 @@ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cud
   --global-option="--fast_multihead_attn" ./
 cd ..
 ```
-[No need if you use fsdp_1T_2@pbelevich/fairseq] Quick fix [fairseq-deepspeed issue](https://github.com/pytorch/fairseq/issues/3810):
+[No need if you use fsdp_1T@pbelevich/fairseq] Quick fix [fairseq-deepspeed issue](https://github.com/pytorch/fairseq/issues/3810):
 Open fairseq/optim/cpu_adam.py and add `, False` to [the line 116](https://github.com/pytorch/fairseq/blob/1f7ef9ed1e1061f8c7f88f8b94c7186834398690/fairseq/optim/cpu_adam.py#L116)
 
 Clone this repo
