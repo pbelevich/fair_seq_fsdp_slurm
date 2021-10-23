@@ -70,7 +70,7 @@ TORCH_CUDA_ARCH_LIST=8.0 python setup.py install
 ```
 </details>
 
-(also you need to build corresponding torchaudio if you want to run fairseq)
+(also you need to build corresponding torchaudio version if you want to run fairseq)
 
 <details>
   <summary>Build torchaudio from source</summary>
@@ -84,7 +84,7 @@ python setup.py install
 </details>
 
 ## Install the aws-ofi-nccl plugin
-Assuming that you don't have access to `/opt` let's you home directory for aws-ofi-nccl installation. 
+Assuming that you don't have access to `/opt` let's use your home directory for aws-ofi-nccl installation. 
 ```bash
 export WORK_DIR=${HOME} # I use /fsx/users/pbelevich
 ```
