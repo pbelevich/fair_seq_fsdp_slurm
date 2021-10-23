@@ -5,11 +5,11 @@ Create conda env
 conda create -yn fsdp_1T python=3.8
 conda activate fsdp_1T
 ```
-Install PyTorch
+Install PyTorch (for EFA support see [the instuctions](efa_support.md))
 ```bash
 conda install -y pytorch cudatoolkit=11.1 -c pytorch -c nvidia
 ```
-Clone and install fairscale from source
+Clone and install pbelevich/fairscale from source
 ```bash
 git clone git@github.com:pbelevich/fairscale.git pbelevich-fairscale
 cd pbelevich-fairscale
