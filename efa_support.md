@@ -47,6 +47,20 @@ fi_getinfo: -61
 
 then try to install according to [the instructios](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa-start-nccl-base.html#nccl-start-base-enable) (if you have `sudo` privileges)
   
+Another test for EFA support
+```bash
+/opt/amazon/efa/test/efa_test.sh
+Starting server...
+Starting client...
+bytes   #sent   #ack     total       time     MB/sec    usec/xfer   Mxfers/sec
+64      10      =10      1.2k        0.03s      0.04    1579.10       0.00
+256     10      =10      5k          0.00s     10.92      23.45       0.04
+1k      10      =10      20k         0.00s     42.40      24.15       0.04
+4k      10      =10      80k         0.00s    169.26      24.20       0.04
+64k     10      =10      1.2m        0.00s    722.16      90.75       0.01
+1m      10      =10      20m         0.01s   2614.25     401.10       0.00
+```
+  
 </details>
 
 ## For EFA support you need to build PyTorch from source
