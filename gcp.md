@@ -6,7 +6,7 @@ The original SLURM image may not have the required software(mostly gcc/nvcc comp
 
 ## Image
 
-TODO
+[Create GCP image from SLURM image with custom CUDA and GCC](gcp_image.md)
 
 ## NFS
 
