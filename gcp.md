@@ -14,7 +14,26 @@ TODO
 
 ## Cluster = Image + NFS
 
-TODO
+[Install gcloud](https://cloud.google.com/sdk/docs/install)
+
+[Install terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
+Clone fsdp_1T branch [pbelevich/slurm-gcp](https://github.com/pbelevich/slurm-gcp)
+```bash
+git clone -b fsdp_1T https://github.com/pbelevich/slurm-gcp.git
+```
+```bash
+cd slurm-gcp/tf/examples/basic
+```
+Initialize terraform once
+```bash
+terraform init
+```
+Create cluster
+```bash
+terraform apply -var-file=40_a2-highgpu-8g.tfvars
+```
+
 
 Make sure that CUDA version corresponds to PyTorch CUDA version. The following command should show 11.3.1 if we use PyTorch 1.10 with CUDA toolkit 11.3.1
 ```bash
