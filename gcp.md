@@ -10,7 +10,7 @@ The original SLURM image may not have the required software(mostly gcc/nvcc comp
 
 ## NFS
 
-[Create GCP NFS share](gcp_nfs.md)
+[Create GCP NFS share](gcp_nfs.md) and **get IP address and share name!**
 
 ## Cluster = Image + NFS
 
@@ -25,6 +25,9 @@ git clone -b fsdp_1T https://github.com/pbelevich/slurm-gcp.git
 ```bash
 cd slurm-gcp/tf/examples/basic
 ```
+
+**Update `network_storage` sections in `40_a2-highgpu-8g.tfvars` with NFS share IP address and share name**
+
 Initialize terraform once
 ```bash
 terraform init
