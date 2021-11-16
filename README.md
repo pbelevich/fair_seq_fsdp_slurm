@@ -5,10 +5,19 @@ Create conda env
 conda create -yn fsdp_1T python=3.8
 conda activate fsdp_1T
 ```
-Install PyTorch (for EFA support see [the instuctions](efa_support.md))
+Checkout and build PyTorch from source (for EFA support see [the instuctions](efa_support.md))
 ```bash
-conda install -y pytorch cudatoolkit=11.3 -c pytorch -c nvidia
+conda install -y astunparse numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing_extensions future six requests dataclasses
+conda install -y -c pytorch magma-cuda110
 ```
+
+```bash
+git clone --recursive git@github.com:pytorch/pytorch.git
+cd pytorch
+TORCH_CUDA_ARCH_LIST=8.0 python setup.py install
+cd ..
+```
+
 Clone and install pbelevich/fairscale from source
 ```bash
 git clone git@github.com:pbelevich/fairscale.git pbelevich-fairscale
