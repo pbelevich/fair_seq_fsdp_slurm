@@ -79,7 +79,7 @@ Checkout and build PyTorch from source(TORCH_CUDA_ARCH_LIST=8.0 for p4d.24xlarge
 ```bash
 git clone --recursive git@github.com:pytorch/pytorch.git
 cd pytorch
-git checkout v1.10.0
+# git checkout v1.10.0
 TORCH_CUDA_ARCH_LIST=8.0 python setup.py install
 ```
 </details>
