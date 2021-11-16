@@ -28,12 +28,12 @@ gcloud compute ssh ${IMAGE_INSTANCE} --zone ${CLUSTER_ZONE}
 Install gcc 7 to the instance:
 ```bash
 sudo yum install -y -q centos-release-scl
-sudo yum install -y -q devtoolset-7-gcc*
+sudo yum install -y -q devtoolset-8-gcc*
 sudo yum install -y -q scl-utils
-source scl_source enable devtoolset-7
+source scl_source enable devtoolset-8
 ```
 
-Double-check that it's gcc 7:
+Double-check that it's gcc 8:
 ```bash
 gcc --version
 ```
