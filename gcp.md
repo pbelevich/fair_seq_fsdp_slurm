@@ -10,7 +10,7 @@ The original SLURM image may not have the required software(mostly gcc/nvcc comp
 
 ## NFS
 
-TODO
+[Create GCP NFS share](gcp_nfs.md)
 
 ## Cluster = Image + NFS
 
