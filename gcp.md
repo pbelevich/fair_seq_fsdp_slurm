@@ -36,6 +36,20 @@ Create cluster
 ```bash
 terraform apply -var-file=40_a2-highgpu-8g.tfvars
 ```
+ssh to the cluster's login node:
+```bash
+export CLUSTER_ZONE="us-central1-b"
+export CLUSTER_LOGIN_NODE=$(gcloud compute instances list \
+    --zones ${CLUSTER_ZONE} \
+    --filter="name ~ pbelevich*.*login." \
+    --format="value(name)" | head -n1)
+gcloud compute ssh ${CLUSTER_LOGIN_NODE} \
+    --zone $CLUSTER_ZONE
+```
+Add gcc 8 to `~./bashrc`
+```bash
+echo "source scl_source enable devtoolset-8" >> ${HOME}/.bashrc
+```
 
 
 Make sure that CUDA version corresponds to PyTorch CUDA version. The following command should show 11.3.1 if we use PyTorch 1.10 with CUDA toolkit 11.3.1
