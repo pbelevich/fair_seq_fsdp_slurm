@@ -20,7 +20,7 @@ The original SLURM image may not have the required software(mostly gcc/nvcc comp
 
 Clone fsdp_1T branch [pbelevich/slurm-gcp](https://github.com/pbelevich/slurm-gcp)
 ```bash
-git clone -b fsdp_1T https://github.com/pbelevich/slurm-gcp.git
+git clone -b fsdp_1T https://github.com/pbelevich/slurm-gcp.git pbelevich-slurm-gcp
 ```
 ```bash
 cd slurm-gcp/tf/examples/basic
