@@ -20,7 +20,7 @@ gcloud filestore instances create ${INSTANCE_NAME} \
 
 Get IP address and share name:
 ```bash
-gcloud filestore instances describe pbelevich-nfs1 \
+gcloud filestore instances describe ${INSTANCE_NAME} \
 	--zone=${CLUSTER_ZONE} \
 	--format="flattened(networks[0].ipAddresses[0], fileShares[0].name)"
 ```
