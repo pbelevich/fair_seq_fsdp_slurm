@@ -20,14 +20,14 @@ cd ..
 
 Clone and install pbelevich/fairscale from source
 ```bash
-git clone git@github.com:pbelevich/fairscale.git pbelevich-fairscale
+git clone https://github.com/pbelevich/fairscale.git pbelevich-fairscale
 cd pbelevich-fairscale
 pip install -e .
 cd ..
 ```
 Clone and install pbelevich/fairseq from branch `fsdp_1T`
 ```bash
-git clone -b fsdp_1T git@github.com:pbelevich/fairseq.git pbelevich-fairseq
+git clone -b fsdp_1T https://github.com/pbelevich/fairseq.git pbelevich-fairseq
 cd pbelevich-fairseq
 pip install -e .
 cd ..
