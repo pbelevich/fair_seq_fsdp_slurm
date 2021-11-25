@@ -12,7 +12,7 @@ conda install -y -c pytorch magma-cuda110
 ```
 
 ```bash
-git clone --recursive git@github.com:pytorch/pytorch.git
+git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
 TORCH_CUDA_ARCH_LIST=8.0 python setup.py install
 cd ..
