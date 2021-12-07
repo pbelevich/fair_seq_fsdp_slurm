@@ -1,0 +1,56 @@
+Region: us-east-1
+Image:
+  Os: alinux2
+HeadNode:
+  InstanceType: c5.9xlarge
+  Ssh:
+    KeyName: pbelevich-key1
+  Iam:
+    S3Access:
+      - BucketName: aws-pc3-fb-post-install
+    AdditionalIamPolicies:
+      - Policy: arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+      - Policy: arn:aws:iam::624573432339:policy/RunInstancesInCapacityReservation
+  CustomActions:
+    OnNodeConfigured:
+      Script: s3://aws-pc3-fb-post-install/postinstall.sh
+  Networking:
+    SubnetId: subnet-0f9807988f6f2a66e
+  LocalStorage:
+    RootVolume:
+      Size: 100
+SharedStorage:
+  - Name: FsxLustre0
+    StorageType: FsxLustre
+    MountDir: /scratch
+    FsxLustreSettings:
+      StorageCapacity: 4800
+      DeploymentType: PERSISTENT_1
+      PerUnitStorageThroughput: 200
+      DataCompressionType: LZ4
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+    - Name: train
+      CustomActions:
+        OnNodeStart:
+          Script: s3://aws-pc3-fb-post-install/preinstall.sh
+      Iam:
+        S3Access:
+          - BucketName: aws-pc3-fb-post-install
+      ComputeResources:
+        - MinCount: 32
+          MaxCount: 32
+          InstanceType: p4d.24xlarge
+          Name: train-p4d24xlarge
+          Efa:
+            Enabled: true
+            GdrSupport: true
+      Networking:
+        PlacementGroup:
+          Enabled: true
+        SubnetIds:
+          - subnet-0dbd8eb32c8b961fc
+DevSettings:
+  Cookbook:
+    ChefCookbook: https://github.com/aws/aws-parallelcluster-cookbook/tarball/refs/heads/pcluster3-run-instances-override
