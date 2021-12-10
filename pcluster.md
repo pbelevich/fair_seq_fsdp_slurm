@@ -20,7 +20,7 @@ pcluster update-compute-fleet --status START_REQUESTED --cluster-name ${CLUSTER_
 ```
 ## Delete cluster:
 ```bash
-pcluster delete-cluster --cluster-name ${CLUSTER_NAME} --region us-east-1
+pcluster delete-cluster --cluster-name ${CLUSTER_NAME} --region ${REGION}
 ```
 ## Export logs
 ```bash
